@@ -11,3 +11,8 @@
 !/docs/
 /docs/*
 !/docs/PRIVACY_AND_ACCESSIBILITY.md
+!/docs/assets/
+/docs/assets/*
+!/docs/assets/cover.svg
+!/docs/assets/practice-atlas.svg
+!/docs/assets/release-map.svg

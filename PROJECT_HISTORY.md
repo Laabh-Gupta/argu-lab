@@ -1,10 +1,16 @@
-# ArguLab — project history
+[ArguLab](README.md) / **The project story**
+
+# From one debate to a practice platform.
+
+![The selected milestones from the MindForge prototype through the expanded platform, v2.0.1, deployment split and v3.0.1.](docs/assets/release-map.svg)
 
 From the first MindForge prototype to **Argulab v3.0.1**. This is a curated account of changes that materially altered the app, reconstructed from commit messages, file changes and implementation records through **19 September 2026**. Routine generated changes, merges and small fixes are omitted.
 
-The source history explicitly names **v2.0.1** and tags **v3.0.1**. It does **not** contain a v2.0.0 tag or commit title. The v2.0.0 heading below is a retrospective label for the expanded pre-v2.0.1 application, not a claim that a formal release tag existed. Commit identifiers are reference points in the private source repository; the public documentation repository does not include that repository's code or Git history.
+> [!NOTE]
+> The source history explicitly names **v2.0.1** and tags **v3.0.1**. It does **not** contain a v2.0.0 tag or commit title. The v2.0.0 heading below is a retrospective label for the expanded pre-v2.0.1 application, not a claim that a formal release tag existed. Commit identifiers are reference points in the private source repository; the public documentation repository does not include that repository's code or Git history.
 
-## At a glance
+<details>
+<summary><strong>Open the date and milestone index</strong></summary>
 
 | Stage                                | Period            | Significant change                                                                                           |
 | ------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -16,16 +22,21 @@ The source history explicitly names **v2.0.1** and tags **v3.0.1**. It does **no
 | v3.0.1 — privacy and accessibility   | 19 September 2026 | Policies, adult/terms acknowledgements, account export/deletion and accessibility improvements.              |
 | Logo refresh                         | 19 September 2026 | New brain-and-speech-bubble logo supplied for the current app.                                               |
 
+</details>
+
 ## 1. Initial stages — MindForge takes shape
 
 The project began from a TanStack-based template on 1 August. By 4 August, the first MindForge implementation brought together landing, account, dashboard, debate and result screens. Early interface data and placeholder behavior established the product's shape.
 
 The important next step was connecting the debate experience to an AI conversation flow and scoring actual transcripts, giving the result screen something grounded in the user's session.
 
-Selected evidence:
+<details>
+<summary><strong>Source milestones for this stage</strong></summary>
 
 - `b90d714` — **Implemented MindForge app**, 4 August: the first integrated interface and debate-oriented product structure.
 - `2023593` — **Added real transcript scoring**, 4 August: server-side conversation/scoring integration and transcript-based results.
+
+</details>
 
 ## 2. v2.0.0 — from debate app to practice platform
 
@@ -35,13 +46,16 @@ A shared application shell consolidated navigation and added dedicated module an
 
 This stage established the breadth of the product, while later work was still needed for reliable account persistence, honest progress calculations, end-to-end recovery and production deployment.
 
-Selected evidence:
+<details>
+<summary><strong>Source milestones for this stage</strong></summary>
 
 - `c47a346` — **Added AI training modes & hub**, 5 August: reusable sessions, training routes, Observer Mode and shared evaluation.
 - `442331c` — **Added thinking-view & scoring**, 6 August: argument-analysis UI and preset/custom evaluation profiles.
 - `5f84b82` — **Refactored app into shared shell**, 8 August: consistent navigation, module pages and progress/settings screens.
 - `8ad9507` — **Added AI moderator & cast**, 11 August: more developed participant and moderator behavior in group discussion.
 - `fedb5c5` — **Update MindForge implementation**, 30 August: consolidated implementation checkpoint before the next major completion pass.
+
+</details>
 
 ## 3. v2.0.1 — dependable end-to-end practice
 
@@ -59,11 +73,14 @@ The application was then adapted for a static frontend on Netlify and a separate
 
 The split added a same-origin account proxy, a direct API path for AI streaming, database persistence/import checks and compatible frontend dependencies. Verified TLS secured the hosted database connection. The public-facing name became Argulab, with documentation for the actual deployment; compatibility identifiers were retained to preserve existing accounts and history.
 
-Selected evidence:
+<details>
+<summary><strong>Source milestones for this stage</strong></summary>
 
 - `238e48d` — **Split deployment on main and fix Vite dependency compatibility**, 12 September.
 - `0c936c8` — **Configure verified Supabase TLS in backend deployment**, 12 September.
 - `9b4cfc8` — **Rename app to Argulab and document setup and deployment**, 12 September.
+
+</details>
 
 ## 5. Clearer workspaces, optional speech and demonstration data
 
@@ -92,3 +109,7 @@ The following **logo change** commit (`1bfc8fe`, 19 September) supplied the new 
 Google sign-in and password-recovery email still require their live provider setup. AI review assesses submitted text, not vocal delivery. Human multiplayer, paid subscriptions and independently verified outcome claims are not part of the current release.
 
 The project now publishes product documentation separately from its private source. This history is intentionally present in both repositories so the same milestones can be read without exposing implementation files, credentials or source history.
+
+---
+
+[Back to ArguLab](README.md) · [Open the current app ↗](https://argulab.netlify.app)

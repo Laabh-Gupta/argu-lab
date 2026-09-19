@@ -1,68 +1,125 @@
-# ArguLab features
+[ArguLab](README.md) / **The practice atlas** · [History](PROJECT_HISTORY.md) · [Data and accessibility](docs/PRIVACY_AND_ACCESSIBILITY.md)
 
-Current app version: **3.0.1**. This guide describes implemented product behavior; provider-dependent features are identified separately.
+# Find the conversation you want to practice.
 
-## Nine ways to practice
+**PRODUCT GUIDE · v3.0.1**
 
-| Mode                  | Practice experience                                                                                                      |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Debate Arena          | Present an argument, respond to Socratic challenges, clarify a position and review the discussion.                       |
-| Group Discussion      | Join a simulated room with an AI moderator and distinct participants; contribute, listen, and review your participation. |
-| Interview Simulator   | Choose an interview format, describe your background or target role, and answer contextual follow-up questions.          |
-| Public Speaking       | Work on a topic or speech and receive feedback on its submitted content and structure.                                   |
-| Extempore             | Practice with a generated topic, preparation time and a timed response.                                                  |
-| Negotiation           | Respond to a counterpart in a scenario and review concessions, priorities and trade-offs.                                |
-| Case Discussion       | Frame a problem, reason through evidence and propose a recommendation.                                                   |
-| Real-World Simulation | Take a role in a scenario with simulated stakeholders and events.                                                        |
-| Observer Mode         | Read a generated discussion, answer analysis questions and review your interpretation.                                   |
+![Nine practice modes grouped by the kind of conversation: make your case, find your voice, read the room.](docs/assets/practice-atlas.svg)
 
-These are simulations with AI participants, not live rooms with other human users.
+## Make your case
 
-## Conversations and reviews
+| Room                | Your role               | What you work through                                                                                 |
+| :------------------ | :---------------------- | :---------------------------------------------------------------------------------------------------- |
+| **Debate Arena**    | Defend a position       | Present an argument, respond to Socratic challenges, clarify your position and review the discussion. |
+| **Negotiation**     | Work with a counterpart | Navigate a scenario, priorities, concessions and trade-offs.                                          |
+| **Case Discussion** | Make a recommendation   | Frame a problem, reason through evidence and explain your proposed decision.                          |
 
-- Configurable topics, difficulty, and mode-specific roles or formats.
-- English, Hindi and mixed-language response preferences.
-- Streamed replies, saved transcripts and resumable unfinished sessions.
-- Mode-specific reviews with strengths, weaknesses, reasoning issues and suggested next steps.
-- Fifteen underlying review dimensions, preset scoring profiles and custom weights; re-scoring a review does not award a second completion.
-- Thinking View for structured argument analysis where supported. It is an explanatory output, not access to a model's hidden internal reasoning.
+## Find your voice
 
-AI output may be inaccurate. Suggested evidence is not independently fact-checked, and scores do not certify ability or predict admission, examination or employment outcomes.
+| Room                    | Your role             | What you work through                                                                            |
+| :---------------------- | :-------------------- | :----------------------------------------------------------------------------------------------- |
+| **Interview Simulator** | Answer as a candidate | Choose a format, describe your background or target role, then respond to contextual follow-ups. |
+| **Public Speaking**     | Structure a speech    | Work on a topic and review the submitted content, organization and reasoning.                    |
+| **Extempore**           | Think on your feet    | Receive a generated topic, prepare, then work through a timed response.                          |
 
-## History and progress
+## Read the room
 
-- Guest practice stays in the current browser; account practice can be retrieved after signing in on another device.
-- Dashboard activity and progress come from saved practice records.
-- Calendar streaks, levels, achievements, skill trends and history filters help organize repeated practice.
-- The optional leaderboard publishes a display name and aggregate totals, not private transcripts or email addresses.
-- A separate demonstration dataset contains 18 clearly fictional sessions across all nine modes. These are examples, not customer reviews. Demo credentials are not published here.
+| Room                      | Your role                | What you work through                                                                  |
+| :------------------------ | :----------------------- | :------------------------------------------------------------------------------------- |
+| **Group Discussion**      | Join the conversation    | Contribute to a simulated room with an AI moderator and distinct participants.         |
+| **Real-World Simulation** | Take a scenario role     | Respond to simulated stakeholders, context and events.                                 |
+| **Observer Mode**         | Analyze the conversation | Read a generated discussion, answer analysis questions and review your interpretation. |
 
-## Audio, with explicit controls
+> [!NOTE]
+> Participants are AI-generated. These modes do not connect you to live human practice partners.
 
-Record, pause, resume, play back or download a short recording. Recording alone does not upload the audio. Choose **Transcribe** to send it for speech-to-text conversion, review the editable draft, then send the text yourself.
+## A session is more than a chat
 
-**Listen** uses the browser or operating system's speech service. Some voices may process text remotely. Recording and voice support depend on the browser and device, and written input remains available.
+```mermaid
+flowchart TD
+    A[Topic + difficulty + supported role] --> B[Conversation]
+    B --> C[Saved transcript and resumable state]
+    C --> D[Mode-specific review]
+    D --> E[Strengths and weaknesses]
+    D --> F[Reasoning and evidence]
+    D --> G[Suggested next steps]
+    D --> H[Preset or custom scoring weights]
+```
 
-Recordings are limited to two minutes and transcription uploads to 4 MB. Transcription has separate application limits of 10 requests per visitor/hour, 20 per visitor/day, 100 globally/day and 5 globally/minute. Provider quotas also apply. Current conversation defaults are 60 requests per visitor/hour and 600 across the app/hour.
+**15 review dimensions** support preset profiles and custom weights. Re-scoring changes how a review is weighted; it does not award a second completion. Thinking View provides structured argument analysis where supported, rather than access to hidden model reasoning.
 
-The configured defaults are Groq `openai/gpt-oss-120b` for conversation/review and `whisper-large-v3-turbo` for transcription. Browser read-aloud does not use a paid text-to-speech API. Provider availability and deployment settings can change.
+Response preferences support **English**, **Hindi** and **mixed language**. AI output may be inaccurate, suggested evidence is not independently fact-checked, and scores do not predict examination, admission or employment outcomes.
 
-## Exports and account controls
+## Audio with a clear handoff
 
-Download text reports, print or save a report as PDF, export practice/account data as JSON, and download local recordings. Clear history or permanently delete an account from **Settings → Your data**.
+```mermaid
+flowchart LR
+    A[Record in your tab] --> B{Your choice}
+    B --> C[Play back or download]
+    B -->|Choose Transcribe| D[Groq speech-to-text]
+    D --> E[Editable draft]
+    E -->|Choose Send| F[Conversation]
+    F -->|Choose Listen| G[Browser read-aloud]
+```
 
-Account deletion requires the current password for email accounts, or a recent sign-in for Google-only accounts when that provider is enabled. It removes active account and practice records and revokes sessions. Exports, copies on other devices, and provider backup/log retention are separate.
+Recording alone uploads nothing. Transcription sends audio through the backend only after your explicit action. Review and edit the returned text before sending it. Read-aloud uses the browser or operating system; some voices may process text remotely.
 
-## Preferences and accessibility
+| On your device                                 | At the transcription boundary                                         | When audio is unavailable                            |
+| :--------------------------------------------- | :-------------------------------------------------------------------- | :--------------------------------------------------- |
+| Record, pause, resume, play back and download. | Separate quotas, a two-minute recorder limit and a 4 MB upload limit. | Continue with written input; browser support varies. |
 
-Light, dark and system themes; larger text; reduced motion; keyboard navigation; visible focus controls; labelled inputs; and responsive dialogs. The v3.0.1 release includes automated accessibility checks in both themes and small-screen checks for consent and deletion. These checks are not a claim of complete WCAG conformance.
+<details>
+<summary><strong>Model defaults and request budgets</strong></summary>
 
-## Limits of the current release
+| Capability              | Default provider/model        | Application limits                                                            |
+| :---------------------- | :---------------------------- | :---------------------------------------------------------------------------- |
+| Conversation and review | Groq `openai/gpt-oss-120b`    | 60 per visitor/hour; 600 across the app/hour.                                 |
+| Transcription           | Groq `whisper-large-v3-turbo` | 10 per visitor/hour; 20 per visitor/day; 100 globally/day; 5 globally/minute. |
+| Read-aloud              | Browser speech synthesis      | No Groq request; voice support depends on the device.                         |
 
-- Adults only, with age self-declaration rather than identity verification; no children's accounts or parental-consent flow.
+These are configured defaults, not a promise of provider availability or unlimited free capacity. Provider quotas also apply. A separate API key does not necessarily provide a separate provider quota.
+
+</details>
+
+## Build a practice record
+
+| Resume                                                   | Notice patterns                                                              | Choose visibility                                                  |
+| :------------------------------------------------------- | :--------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| Return to unfinished sessions and completed transcripts. | See saved activity, calendar streaks, levels, achievements and skill trends. | Opt into the leaderboard with a display name and aggregate totals. |
+
+Guest history stays in the current browser. Account history can be retrieved after signing in on another device. Guest sessions are not automatically merged into an account. Public leaderboard entries exclude private transcripts and email addresses.
+
+**Demonstration content:** a separate dataset contains **18 fictional sessions across nine modes**. These illustrate workflows and reviews; they are not customer testimonials. Demo credentials are not published here.
+
+## Take your work with you
+
+| Output                   | Use it for                                     |
+| :----------------------- | :--------------------------------------------- |
+| **Text report**          | A readable record of selected session content. |
+| **Print / save as PDF**  | A report to keep or share.                     |
+| **JSON export**          | A copy of practice or account data.            |
+| **Local audio download** | Your recording, saved from the current tab.    |
+
+**Settings → Your data** also provides history clearing and permanent account deletion. Email accounts require the current password; Google-only accounts require a recent sign-in when that provider is enabled. Active records and sessions are removed; exports, other-device copies and provider backups/logs have separate retention.
+
+## Make the interface fit
+
+| Appearance                                  | Interaction                                                                 | Alternatives                                               |
+| :------------------------------------------ | :-------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| Light, dark and system themes; larger text. | Keyboard navigation, visible focus, labelled inputs and responsive dialogs. | Reduced motion and written input alongside optional audio. |
+
+The v3.0.1 release includes automated checks in both themes and small-screen consent/deletion checks. This does not establish complete WCAG conformance.
+
+<details>
+<summary><strong>Current release boundaries</strong></summary>
+
+- Adults only, using self-declaration rather than identity verification; no children's accounts or parental-consent flow.
 - Google OAuth and recovery email need their live provider setup completed.
 - No payments, subscriptions, advertisements, marketing email list or analytics-tracking SDK.
-- No automatic migration of guest history into a signed-in account.
 - No real-time human multiplayer, identity-verified competition, vocal-delivery grading or guaranteed AI accuracy.
 
-[Back to overview](README.md) · [Project history](PROJECT_HISTORY.md)
+</details>
+
+---
+
+[Open a practice room ↗](https://argulab.netlify.app/train) · [Back to the product guide](README.md) · [See how the app evolved](PROJECT_HISTORY.md)

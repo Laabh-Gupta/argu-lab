@@ -1,6 +1,27 @@
+[ArguLab](../README.md) / **Data, choices and accessibility** · [Features](../FEATURES.md)
+
 # Privacy, accessibility and providers
 
 Product overview for **ArguLab v3.0.1**, 19 September 2026. The deployed [Privacy Policy](https://argulab.netlify.app/privacy) and [Terms](https://argulab.netlify.app/terms) describe current use of the app.
+
+## Follow the data
+
+```mermaid
+flowchart TD
+    U[Your browser] -->|Guest history and preferences| L[Local browser storage]
+    U -->|Signed-in account and practice| A[Application backend]
+    A --> D[(Supabase PostgreSQL)]
+    U -->|Send a prompt or choose Transcribe| A
+    A -->|Requested AI processing| G[Groq]
+    U -->|Choose Listen| V[Browser or operating-system voice]
+```
+
+| Your choice              | What changes                                       | What stays separate                                    |
+| :----------------------- | :------------------------------------------------- | :----------------------------------------------------- |
+| **Use a guest session**  | Practice remains in this browser.                  | It is not automatically merged into an account.        |
+| **Choose Transcribe**    | Audio is sent for speech-to-text conversion.       | Recording alone stays in the tab.                      |
+| **Join the leaderboard** | A display name and aggregate totals become public. | Email and transcripts stay out of the listing.         |
+| **Delete your account**  | Active app records and sessions are removed.       | Downloads, other-device copies and provider retention. |
 
 ## User controls
 
@@ -11,7 +32,9 @@ Product overview for **ArguLab v3.0.1**, 19 September 2026. The deployed [Privac
 - Recording stays in the tab unless the user chooses Transcribe. The app does not store uploaded audio files in its database or on server disk.
 - The essential-storage notice does not offer an unnecessary “accept all” choice. This release has no advertising, marketing analytics or session-replay SDK.
 
-## Provider inventory
+## The services behind a request
+
+The table identifies each service by its purpose. Optional identity and email integrations are explicitly marked.
 
 | Provider or component                                 | Purpose                                                                                |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -27,6 +50,12 @@ Product overview for **ArguLab v3.0.1**, 19 September 2026. The deployed [Privac
 | DM Sans and Space Grotesk                             | Fonts hosted with the app, with license notices.                                       |
 
 Hosting providers receive connection metadata. Provider processing may occur outside the user's country, and account deletion does not promise immediate removal from every provider backup or log. Read the app's policy before submitting personal information, and avoid including sensitive information in practice prompts.
+
+## Designed for different ways of using the app
+
+| See it clearly                                        | Move through it                                                               | Choose your input                                           |
+| :---------------------------------------------------- | :---------------------------------------------------------------------------- | :---------------------------------------------------------- |
+| Light/dark themes, larger text and readable contrast. | Keyboard navigation, visible focus, labelled controls and responsive dialogs. | Written answers, optional recording and browser read-aloud. |
 
 ## Accessibility and accurate claims
 
