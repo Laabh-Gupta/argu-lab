@@ -1,0 +1,13 @@
+# Publish only this reviewed documentation and logo. Everything else stays local.
+/*
+!/.gitignore
+!/README.md
+!/FEATURES.md
+!/PROJECT_HISTORY.md
+!/NOTICE.md
+!/assets/
+/assets/*
+!/assets/argulab-logo.png
+!/docs/
+/docs/*
+!/docs/PRIVACY_AND_ACCESSIBILITY.md
