@@ -10,6 +10,7 @@
 !/assets/argulab-logo.png
 !/docs/
 /docs/*
+!/docs/ENGINEERING.md
 !/docs/PRIVACY_AND_ACCESSIBILITY.md
 !/docs/assets/
 /docs/assets/*

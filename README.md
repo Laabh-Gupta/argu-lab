@@ -10,13 +10,22 @@
   <a href="PROJECT_HISTORY.md">Follow the project story</a>
 </p>
 
-# Practice the conversation before it matters.
+# ArguLab
+
+**AI Communication Practice & Personalized Training Platform**
+
+### Practice the conversation before it matters.
 
 **Release: v3.0.2**
 
 A difficult question. An unfamiliar room. An idea worth defending. **ArguLab** gives you a place to rehearse those moments with AI-generated conversations and feedback.
 
 Choose a scenario, work through a conversation, then revisit how you framed your argument. Start as a guest or keep a practice history with an email account. ArguLab is a cooperative project, formerly **MindForge**.
+
+**For engineers:** [Architecture, personalization, deployment and testing →](docs/ENGINEERING.md)<br>
+React 19 · TypeScript · Fastify · Better Auth · Groq / AI SDK · PostgreSQL · Docker.
+
+The personalization design carries session summaries and strengths/weaknesses into persistent user context for future practice. The [engineering guide](docs/ENGINEERING.md#personalized-training-engine) distinguishes the richer context rollout from verified v3.0.2 adaptive difficulty.
 
 | For the next conversation                                                  | For the next attempt                                                                | For your own records                                                              |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
