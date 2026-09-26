@@ -1,4 +1,4 @@
-# Publish only this reviewed documentation and logo. Everything else stays local.
+# Publish only this reviewed documentation, release metadata and graphics. Everything else stays local.
 /*
 !/.gitignore
 !/README.md
@@ -16,3 +16,13 @@
 !/docs/assets/cover.svg
 !/docs/assets/practice-atlas.svg
 !/docs/assets/release-map.svg
+
+!/VERSION
+!/CHANGELOG.md
+!/VERSIONING.md
+!/docs/ai/
+/docs/ai/*
+!/docs/ai/README.md
+!/docs/releases/
+/docs/releases/*
+!/docs/releases/3.0.2.md

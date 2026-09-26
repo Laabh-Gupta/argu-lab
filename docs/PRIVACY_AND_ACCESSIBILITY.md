@@ -2,7 +2,9 @@
 
 # Privacy, accessibility and providers
 
-Product overview for **ArguLab v3.0.1**, 19 September 2026. The deployed [Privacy Policy](https://argulab.netlify.app/privacy) and [Terms](https://argulab.netlify.app/terms) describe current use of the app.
+**Release: v3.0.2**
+
+Product overview for **ArguLab v3.0.2**, 26 September 2026. The deployed [Privacy Policy](https://argulab.netlify.app/privacy) and [Terms](https://argulab.netlify.app/terms) describe current use of the app.
 
 ## Follow the data
 
@@ -66,3 +68,5 @@ Reviews and progress scores are coaching estimates. Fictional demo sessions are 
 Public operator and support/privacy contact details are deferred by the project collaborators. These materials do not claim legal certification or replace rights under applicable law.
 
 [Cookie policy](https://argulab.netlify.app/cookies) · [Refund policy](https://argulab.netlify.app/refunds) · [Accessibility statement](https://argulab.netlify.app/accessibility) · [Font and icon licenses](https://argulab.netlify.app/licenses) · [Overview](../README.md)
+
+[AI task guide](../docs/ai/README.md) · [v3.0.2 changes](../docs/releases/3.0.2.md) · [Version maintenance](../VERSIONING.md)

@@ -2,7 +2,9 @@
 
 # Find the conversation you want to practice.
 
-**PRODUCT GUIDE · v3.0.1**
+**Release: v3.0.2**
+
+**PRODUCT GUIDE**
 
 ![Nine practice modes grouped by the kind of conversation: make your case, find your voice, read the room.](docs/assets/practice-atlas.svg)
 
@@ -108,7 +110,7 @@ Guest history stays in the current browser. Account history can be retrieved aft
 | :------------------------------------------ | :-------------------------------------------------------------------------- | :--------------------------------------------------------- |
 | Light, dark and system themes; larger text. | Keyboard navigation, visible focus, labelled inputs and responsive dialogs. | Reduced motion and written input alongside optional audio. |
 
-The v3.0.1 release includes automated checks in both themes and small-screen consent/deletion checks. This does not establish complete WCAG conformance.
+The checks introduced in v3.0.1 continue in v3.0.2, including automated checks in both themes and small-screen consent/deletion checks. This does not establish complete WCAG conformance.
 
 <details>
 <summary><strong>Current release boundaries</strong></summary>
@@ -123,3 +125,7 @@ The v3.0.1 release includes automated checks in both themes and small-screen con
 ---
 
 [Open a practice room ↗](https://argulab.netlify.app/train) · [Back to the product guide](README.md) · [See how the app evolved](PROJECT_HISTORY.md)
+
+[AI task guide](docs/ai/README.md) · [v3.0.2 changes](docs/releases/3.0.2.md) · [Version maintenance](VERSIONING.md)
+
+This release improves routing reliability and release tracking; it preserves the same model defaults and optional speech flow.

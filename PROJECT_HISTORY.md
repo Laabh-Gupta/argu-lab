@@ -2,29 +2,32 @@
 
 # From one debate to a practice platform.
 
-![The selected milestones from the MindForge prototype through the expanded platform, v2.0.1, deployment split and v3.0.1.](docs/assets/release-map.svg)
+**Release: v3.0.2**
 
-From the first MindForge prototype to **Argulab v3.0.1**. This is a curated account of changes that materially altered the app, reconstructed from commit messages, file changes and implementation records through **19 September 2026**. Routine generated changes, merges and small fixes are omitted.
+![The selected milestones from the MindForge prototype through the expanded platform, v2.0.1, deployment split, v3.0.1 and v3.0.2.](docs/assets/release-map.svg)
+
+From the first MindForge prototype to **Argulab v3.0.2**. This is a curated account of changes that materially altered the app, reconstructed from commit messages, file changes and implementation records through **26 September 2026**. Routine generated changes, merges and small fixes are omitted.
 
 > [!NOTE]
-> The source history explicitly names **v2.0.1** and tags **v3.0.1**. It does **not** contain a v2.0.0 tag or commit title. The v2.0.0 heading below is a retrospective label for the expanded pre-v2.0.1 application, not a claim that a formal release tag existed. Commit identifiers are reference points in the private source repository; the public documentation repository does not include that repository's code or Git history.
+> The project records v1.0.0, v2.0.0, v2.0.1, v3.0.1 and v3.0.2. The first two stages are reconstructed from significant commits; their annotated tags were added retrospectively on 26 September 2026. v2.0.1 already had an explicitly named source commit; v3.0.1 already had its release tag. Original commits and dates are preserved. See [version maintenance](VERSIONING.md) for the selected snapshots. Commit IDs refer to private source history, which is not copied to the public repository.
 
 <details>
 <summary><strong>Open the date and milestone index</strong></summary>
 
-| Stage                                | Period            | Significant change                                                                                           |
-| ------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------ |
-| Initial MindForge prototype          | 1–4 August 2026   | App shell, dashboard and debate flow, followed by real transcript scoring.                                   |
-| v2.0.0 — expanded practice platform  | 5–30 August 2026  | Training hub, multiple modes, structured reviews, shared navigation and moderated group discussion.          |
-| v2.0.1 — complete practice workflows | 12 September 2026 | Resumable history, first-party accounts, real progress, local recording, exports and automated verification. |
-| Deployment and Argulab transition    | 12 September 2026 | Separate frontend/API deployment, hosted PostgreSQL, verified database TLS and the Argulab name.             |
-| Modular workspaces and speech        | 19 September 2026 | Clear ownership of frontend/backend/shared code, opt-in transcription, read-aloud and fictional demo data.   |
-| v3.0.1 — privacy and accessibility   | 19 September 2026 | Policies, adult/terms acknowledgements, account export/deletion and accessibility improvements.              |
-| Logo refresh                         | 19 September 2026 | New brain-and-speech-bubble logo supplied for the current app.                                               |
+| Stage                                        | Period            | Significant change                                                                                           |
+| -------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| v1.0.0 — initial MindForge prototype         | 1–4 August 2026   | App shell, dashboard and debate flow, followed by real transcript scoring.                                   |
+| v2.0.0 — expanded practice platform          | 5–30 August 2026  | Training hub, multiple modes, structured reviews, shared navigation and moderated group discussion.          |
+| v2.0.1 — complete practice workflows         | 12 September 2026 | Resumable history, first-party accounts, real progress, local recording, exports and automated verification. |
+| Deployment and Argulab transition            | 12 September 2026 | Separate frontend/API deployment, hosted PostgreSQL, verified database TLS and the Argulab name.             |
+| Modular workspaces and speech                | 19 September 2026 | Clear ownership of frontend/backend/shared code, opt-in transcription, read-aloud and fictional demo data.   |
+| v3.0.1 — privacy and accessibility           | 19 September 2026 | Policies, adult/terms acknowledgements, account export/deletion and accessibility improvements.              |
+| Logo refresh                                 | 19 September 2026 | New brain-and-speech-bubble logo supplied for the current app.                                               |
+| v3.0.2 — API routing and release maintenance | 26 September 2026 | Explicit API groups, shared paths, error/quota fixes, version checks and task-by-task AI documentation.      |
 
 </details>
 
-## 1. Initial stages — MindForge takes shape
+## 1. v1.0.0 — MindForge takes shape
 
 The project began from a TanStack-based template on 1 August. By 4 August, the first MindForge implementation brought together landing, account, dashboard, debate and result screens. Early interface data and placeholder behavior established the product's shape.
 
@@ -90,7 +93,7 @@ Audio gained optional Groq transcription into an editable draft and browser read
 
 Selected evidence: `c99d4a4` — **Separate application workspaces and add speech practice and demo data**, 19 September. This was the major engineering step immediately before v3.0.1; the source history does not tag it as a separate v3.0.0 release.
 
-## 6. Current release — Argulab v3.0.1
+## 6. v3.0.1 — privacy and accessibility
 
 The v3.0.1 release added public privacy, terms, refund, cookie, accessibility and license pages, together with an essential-storage notice. Registration and AI practice require adult/terms acknowledgements. Users can export account data and permanently delete an account with authenticated ownership checks and session revocation.
 
@@ -102,7 +105,15 @@ Selected evidence: `48c68ef` — **Argulab v3.0.1**, 19 September; annotated sou
 
 ## 7. Current branding — logo refresh
 
-The following **logo change** commit (`1bfc8fe`, 19 September) supplied the new brain-and-speech-bubble artwork and updated the site's favicon asset. The public documentation uses that supplied image. The app version remains 3.0.1; this branding commit did not create another version tag.
+The following **logo change** commit (`1bfc8fe`, 19 September) supplied the new brain-and-speech-bubble artwork and updated the site's favicon asset. The public documentation uses that supplied image. The app version remained 3.0.1 at that point; the branding commit did not create another version tag.
+
+## 8. Current release — ArguLab v3.0.2
+
+Source commit `46c4df3` reorganized the API into explicit route groups, with one URL contract shared by frontend and backend. Account, practice, community, privacy, AI and speech handlers keep separate responsibilities. Unknown AI endpoints no longer spend AI quota, malformed review JSON returns 400 and unsupported methods return 405.
+
+The routing upgrade passed 58 backend/integration tests and 21 browser tests, including authentication, persistence, privacy, request limits and streaming cleanup. The release records 3.0.2 consistently in package manifests, the runtime health endpoint, documentation and tags. It adds an AI task guide and repeatable version preparation/check commands, while preserving the existing hosting and model configuration.
+
+[Read the v3.0.2 release notes](docs/releases/3.0.2.md) · [AI task guide](docs/ai/README.md) · [Changelog](CHANGELOG.md)
 
 ## What remains separate from completed features
 

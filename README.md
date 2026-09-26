@@ -2,7 +2,7 @@
   <img src="assets/argulab-logo.png" alt="ArguLab brain and speech-bubble logo" width="88" />
 </p>
 
-![ArguLab — a place to think out loud. Nine practice modes, fifteen review dimensions, version 3.0.1.](docs/assets/cover.svg)
+![ArguLab — a place to think out loud. Nine practice modes, fifteen review dimensions, version 3.0.2.](docs/assets/cover.svg)
 
 <p align="center">
   <a href="https://argulab.netlify.app"><strong>Open the app ↗</strong></a> ·
@@ -12,6 +12,8 @@
 
 # Practice the conversation before it matters.
 
+**Release: v3.0.2**
+
 A difficult question. An unfamiliar room. An idea worth defending. **ArguLab** gives you a place to rehearse those moments with AI-generated conversations and feedback.
 
 Choose a scenario, work through a conversation, then revisit how you framed your argument. Start as a guest or keep a practice history with an email account. ArguLab is a cooperative project, formerly **MindForge**.
@@ -19,6 +21,10 @@ Choose a scenario, work through a conversation, then revisit how you framed your
 | For the next conversation                                                  | For the next attempt                                                                | For your own records                                                              |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
 | **Practice**<br>Debate, interview, negotiate or speak to a simulated room. | **Reflect**<br>Explore claims, evidence, counterarguments and suggested next steps. | **Keep control**<br>Resume sessions, export reports and manage your account data. |
+
+## New in v3.0.2
+
+Clearer API routing, corrected error/quota handling and repeatable release checks support the existing nine practice modes. [Release notes](docs/releases/3.0.2.md) · [Which AI does what?](docs/ai/README.md) · [Changelog](CHANGELOG.md) · [Version history](VERSIONING.md)
 
 ## 01 / Find your room
 
@@ -66,7 +72,7 @@ Guest history is not automatically merged into an account. Leaderboard membershi
 
 ## 05 / The project behind the practice
 
-![Milestone map from the August MindForge prototype to September accounts, separate deployment, speech features and Argulab v3.0.1.](docs/assets/release-map.svg)
+![Milestone map from the August MindForge prototype to September accounts, separate deployment, speech features and the ArguLab v3.0.2 routing/release update.](docs/assets/release-map.svg)
 
 [Read the selected milestones and their source commits →](PROJECT_HISTORY.md)
 
