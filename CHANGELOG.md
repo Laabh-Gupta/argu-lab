@@ -4,6 +4,12 @@
 
 Selected releases only. The [project story](PROJECT_HISTORY.md) explains the larger milestones; [versioning](VERSIONING.md) explains tags and future updates.
 
+## [Unreleased]
+
+- Prepared Neon PostgreSQL deployment while preserving the practice interface and Better Auth account model.
+- Added a preview-first database transfer that preserves accounts and practice history and refuses an occupied target.
+- Added verified connection checks, clearer startup diagnostics and database migration regression coverage.
+
 ## [3.0.2] — 2026-09-26
 
 - Replaced the catch-all API dispatcher with explicit route groups and a shared frontend/backend URL contract.

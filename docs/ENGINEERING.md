@@ -60,7 +60,7 @@ flowchart TD
     U[Browser: desktop or mobile] --> F[React frontend / Netlify]
     F -->|Account and history requests| A[Fastify API / Render]
     F -->|Direct AI streaming| A
-    A --> D[(PostgreSQL / Supabase)]
+    A --> D[(PostgreSQL / Neon deployment target)]
     A --> G[Groq: conversation, reviews and transcription]
     U --> S[Browser speech synthesis]
 ```
@@ -69,11 +69,11 @@ flowchart TD
 | --- | --- |
 | Frontend | React 19, TypeScript, Vite, TanStack Router and Tailwind CSS |
 | Backend | Fastify, TypeScript, Better Auth and AI SDK |
-| Data | Supabase-hosted PostgreSQL; backend-managed access and record ownership |
+| Data | PostgreSQL with Neon as the deployment target; backend-managed access and record ownership |
 | Delivery | Netlify frontend, Render backend, backend Docker configuration and GitHub Actions CI |
 | Source organization | Separate frontend/backend workspaces and shared TypeScript contracts |
 
-Authentication and account history use a same-origin API proxy; streaming uses a direct backend path. Better Auth manages accounts; Supabase supplies PostgreSQL. Server-side credentials stay outside the browser bundle.
+Authentication and account history use a same-origin API proxy; streaming uses a direct backend path. Better Auth manages accounts; PostgreSQL stores account and practice data. Existing Supabase deployments remain the source until a verified transfer and connection switch to Neon. Server-side credentials stay outside the browser bundle.
 
 ## Engineering controls
 

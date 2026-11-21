@@ -91,7 +91,7 @@ Guest history is not automatically merged into an account. Leaderboard membershi
 flowchart LR
     B[Browser] --> N[React frontend · Netlify]
     N --> R[Fastify API · Render]
-    R --> S[(PostgreSQL · Supabase)]
+    R --> S[(PostgreSQL · Neon deployment target)]
     R --> G[AI and transcription · Groq]
 ```
 
@@ -107,6 +107,8 @@ The app is free, with no checkout or automatic charges. Application and provider
 Speech reviews assess submitted text, not pronunciation or vocal delivery. Browser voices may process text remotely. Provider availability and configured limits can change.
 
 </details>
+
+The database migration keeps the practice interface and Better Auth accounts unchanged. Neon is the new deployment target; moving existing accounts and history requires a verified data transfer and deployment configuration. The source repository includes a preview-first PostgreSQL migration command. Existing guest history stays in its browser.
 
 ---
 

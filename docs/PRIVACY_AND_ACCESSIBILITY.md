@@ -12,7 +12,7 @@ Product overview for **ArguLab v3.0.2**, 26 September 2026. The deployed [Privac
 flowchart TD
     U[Your browser] -->|Guest history and preferences| L[Local browser storage]
     U -->|Signed-in account and practice| A[Application backend]
-    A --> D[(Supabase PostgreSQL)]
+    A --> D[(Configured PostgreSQL database)]
     U -->|Send a prompt or choose Transcribe| A
     A -->|Requested AI processing| G[Groq]
     U -->|Choose Listen| V[Browser or operating-system voice]
@@ -42,7 +42,7 @@ The table identifies each service by its purpose. Optional identity and email in
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Netlify                                               | Frontend delivery and account-request proxying.                                        |
 | Render                                                | API hosting and requested server processing.                                           |
-| Supabase PostgreSQL                                   | Stored accounts, practice history and application security counters.                   |
+| PostgreSQL (Neon deployment target)                   | Stored accounts, practice history and application security counters.                   |
 | Better Auth                                           | Authentication library running in the backend, not a separate hosted identity service. |
 | Groq                                                  | AI conversations/reviews and explicitly requested transcription.                       |
 | Browser/operating-system speech                       | Optional read-aloud; some voices may process reply text remotely.                      |
