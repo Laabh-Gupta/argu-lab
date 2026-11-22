@@ -2,7 +2,7 @@
 
 # Publication notice
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
 | Public companion                                                             | Private application                                                            |
 | :--------------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
@@ -14,4 +14,4 @@ No open-source software license is granted by this documentation repository. Pub
 
 The live app has its own [Terms of Service](https://argulab.netlify.app/terms) and [Privacy Policy](https://argulab.netlify.app/privacy). Product descriptions are not promises of AI accuracy, outcomes or availability.
 
-[AI task guide](docs/ai/README.md) · [v3.0.2 changes](docs/releases/3.0.2.md) · [Version maintenance](VERSIONING.md)
+[AI task guide](docs/ai/README.md) · [v3.0.3 changes](docs/releases/3.0.3.md) · [Version maintenance](VERSIONING.md)

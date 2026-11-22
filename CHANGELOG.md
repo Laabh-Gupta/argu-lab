@@ -1,14 +1,28 @@
 # ArguLab changelog
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
 Selected releases only. The [project story](PROJECT_HISTORY.md) explains the larger milestones; [versioning](VERSIONING.md) explains tags and future updates.
 
-## [Unreleased]
+## [3.0.3] — 2026-11-22
 
-- Prepared Neon PostgreSQL deployment while preserving the practice interface and Better Auth account model.
+- Migrated production PostgreSQL to Neon while preserving the practice interface and Better Auth account model.
 - Added a preview-first database transfer that preserves accounts and practice history and refuses an occupied target.
 - Added verified connection checks, clearer startup diagnostics and database migration regression coverage.
+- Reduced timer-driven cloud saves to 30-second checkpoints while keeping prompt local drafts, immediate turn/completion saves, ownership and recovery safeguards.
+- Combined history/reset and owner/reset SQL reads, coalesced bounded quota cleanup and added targeted resource indexes.
+- Added compatible cursor pagination and end-of-history metadata; retained offset support for existing clients.
+- Reused validated local history while its stored bytes are unchanged, preserving validation and merge behavior after external edits.
+- Narrowed structured-output recovery to generated-JSON failures; permanent provider errors no longer trigger a second generation. Preserved model defaults, rubric and full transcripts.
+- Added stale-run cancellation, registry-package caching, bounded CI/artifact retention and expanded isolated resource/AI/browser regression checks.
+- Applied ten relevant ECC guides and recorded their source provenance and concrete effects. Reserved payment functionality for the future v4.0.0 release.
+- Connected footer, policy subtitles and refund-page release text to the generated app version while preserving the independent policy-consent date.
+
+[Full v3.0.3 release notes](docs/releases/3.0.3.md)
+
+## [Unreleased]
+
+- Planned v4.0.0: prepaid practice credits and payments. Billing functionality is not enabled in v3.0.3.
 
 ## [3.0.2] — 2026-09-26
 

@@ -1,8 +1,8 @@
-[ArguLab](../../README.md) / **AI task guide** · [Release notes](../releases/3.0.2.md)
+[ArguLab](../../README.md) / **AI task guide** · [Release notes](../releases/3.0.3.md)
 
 # Which AI does what?
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
 ArguLab uses **two distinct Groq-hosted model defaults** and the browser's speech service. Conversation and review tasks currently use the **same text model**, with different prompts, response formats and limits. The simulated moderator, interviewer and other participants are roles within those requests, not separately hosted AI models.
 
@@ -58,6 +58,8 @@ Deployment environment variables can override these defaults. `GROQ_API_KEY` sta
 
 Provider quotas apply in addition to these limits. SDK retries and a structured-output retry can make more than one provider call for one application request. Visitor limits are device-based and global counters persist in PostgreSQL. The app does not promise unlimited free AI usage.
 
+In v3.0.3, a second structured generation is limited to identified generated-JSON parse/schema failures. Invalid request settings, authentication errors and content-filter refusals do not trigger a fresh generation. Transient failures retain the SDK's existing bounded retry and the shared deadline. The unchanged evaluation rubric is placed before session-specific data to make an exact common prefix available to provider-side caching; cache hits and financial savings remain unguaranteed. No conversation or review text is cached across accounts by this app.
+
 ## What is not an AI call?
 
 Local recording and playback, account authentication, saved history, exports, XP, streaks, badges and leaderboard totals do not need generative AI. Changing a review's scoring weights recalculates its existing scores; it does not request another model review or award another completion.
@@ -66,4 +68,4 @@ Audio stays in the tab until the learner chooses **Transcribe**. Text sent for a
 
 ---
 
-[Project history](../../PROJECT_HISTORY.md) · [Versioning](../../VERSIONING.md) · [Current release](../releases/3.0.2.md)
+[Project history](../../PROJECT_HISTORY.md) · [Versioning](../../VERSIONING.md) · [Current release](../releases/3.0.3.md)

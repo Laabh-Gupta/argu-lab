@@ -2,9 +2,9 @@
 
 # Privacy, accessibility and providers
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
-Product overview for **ArguLab v3.0.2**, 26 September 2026. The deployed [Privacy Policy](https://argulab.netlify.app/privacy) and [Terms](https://argulab.netlify.app/terms) describe current use of the app.
+Product overview for **ArguLab v3.0.3**, 22 November 2026. The deployed [Privacy Policy](https://argulab.netlify.app/privacy) and [Terms](https://argulab.netlify.app/terms) describe current use of the app.
 
 ## Follow the data
 
@@ -42,7 +42,7 @@ The table identifies each service by its purpose. Optional identity and email in
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Netlify                                               | Frontend delivery and account-request proxying.                                        |
 | Render                                                | API hosting and requested server processing.                                           |
-| PostgreSQL (Neon deployment target)                   | Stored accounts, practice history and application security counters.                   |
+| PostgreSQL hosted by Neon                             | Stored accounts, practice history and application security counters.                   |
 | Better Auth                                           | Authentication library running in the backend, not a separate hosted identity service. |
 | Groq                                                  | AI conversations/reviews and explicitly requested transcription.                       |
 | Browser/operating-system speech                       | Optional read-aloud; some voices may process reply text remotely.                      |
@@ -69,4 +69,4 @@ Public operator and support/privacy contact details are deferred by the project 
 
 [Cookie policy](https://argulab.netlify.app/cookies) · [Refund policy](https://argulab.netlify.app/refunds) · [Accessibility statement](https://argulab.netlify.app/accessibility) · [Font and icon licenses](https://argulab.netlify.app/licenses) · [Overview](../README.md)
 
-[AI task guide](../docs/ai/README.md) · [v3.0.2 changes](../docs/releases/3.0.2.md) · [Version maintenance](../VERSIONING.md)
+[AI task guide](../docs/ai/README.md) · [v3.0.3 changes](../docs/releases/3.0.3.md) · [Version maintenance](../VERSIONING.md)

@@ -2,7 +2,7 @@
   <img src="assets/argulab-logo.png" alt="ArguLab brain and speech-bubble logo" width="88" />
 </p>
 
-![ArguLab — a place to think out loud. Nine practice modes, fifteen review dimensions, version 3.0.2.](docs/assets/cover.svg)
+![ArguLab — a place to think out loud. Nine practice modes, fifteen review dimensions, version 3.0.3.](docs/assets/cover.svg)
 
 <p align="center">
   <a href="https://argulab.netlify.app"><strong>Open the app ↗</strong></a> ·
@@ -16,7 +16,7 @@
 
 ### Practice the conversation before it matters.
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
 A difficult question. An unfamiliar room. An idea worth defending. **ArguLab** gives you a place to rehearse those moments with AI-generated conversations and feedback.
 
@@ -31,9 +31,9 @@ The personalization design carries session summaries and strengths/weaknesses in
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
 | **Practice**<br>Debate, interview, negotiate or speak to a simulated room. | **Reflect**<br>Explore claims, evidence, counterarguments and suggested next steps. | **Keep control**<br>Resume sessions, export reports and manage your account data. |
 
-## New in v3.0.2
+## New in v3.0.3
 
-Clearer API routing, corrected error/quota handling and repeatable release checks support the existing nine practice modes. [Release notes](docs/releases/3.0.2.md) · [Which AI does what?](docs/ai/README.md) · [Changelog](CHANGELOG.md) · [Version history](VERSIONING.md)
+Neon PostgreSQL hosting, fewer routine cloud saves, efficient history pagination and bounded AI recovery support the existing nine practice modes. Model defaults and private account histories remain intact. [Release notes](docs/releases/3.0.3.md) · [Which AI does what?](docs/ai/README.md) · [Changelog](CHANGELOG.md) · [Version history](VERSIONING.md). Payments are planned for v4.0.0.
 
 ## 01 / Find your room
 

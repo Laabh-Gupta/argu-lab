@@ -1,7 +1,7 @@
 # ArguLab — engineering guide
 
 **AI communication practice & personalized training**<br>
-[Live dashboard](https://argulab.netlify.app/dashboard) · [Product guide](../README.md) · [Nine practice modes](../FEATURES.md) · [Release evidence](releases/3.0.2.md)
+[Live dashboard](https://argulab.netlify.app/dashboard) · [Product guide](../README.md) · [Nine practice modes](../FEATURES.md) · [Release evidence](releases/3.0.3.md)
 
 ArguLab combines AI practice, structured evaluation, persistent history and deployed application infrastructure. The engineering work is AI application integration and software delivery: the project does not train or fine-tune the underlying Groq-hosted foundation models.
 
@@ -9,17 +9,17 @@ This repository is the **public documentation companion**. Application source, t
 
 ## Nine practice modes
 
-| Mode | Practice |
-| --- | --- |
-| Debate | Build an argument and respond to challenges |
-| Group Discussion | Contribute within an AI-moderated group |
-| Interview | Answer contextual questions and follow-ups |
-| Public Speaking | Structure and rehearse a speech |
-| Extempore | Organize a response to an unfamiliar topic |
-| Negotiation | Explore interests, trade-offs and agreement |
-| Case Discussion | Analyze a case and defend a recommendation |
+| Mode                  | Practice                                         |
+| --------------------- | ------------------------------------------------ |
+| Debate                | Build an argument and respond to challenges      |
+| Group Discussion      | Contribute within an AI-moderated group          |
+| Interview             | Answer contextual questions and follow-ups       |
+| Public Speaking       | Structure and rehearse a speech                  |
+| Extempore             | Organize a response to an unfamiliar topic       |
+| Negotiation           | Explore interests, trade-offs and agreement      |
+| Case Discussion       | Analyze a case and defend a recommendation       |
 | Real-World Simulation | Respond to a simulated scenario and stakeholders |
-| Observer Analysis | Examine a discussion and evaluate its reasoning |
+| Observer Analysis     | Examine a discussion and evaluate its reasoning  |
 
 These are AI simulations. Reviews cover strengths, weaknesses, weak claims, evidence, logical fallacies, counterarguments, improvement suggestions and next steps. The interface supports responsive/mobile web use.
 
@@ -43,11 +43,11 @@ This is application-level memory and orchestration, not model fine-tuning. A sep
 
 ## AI architecture
 
-| Task | Integration |
-| --- | --- |
-| Conversation and structured AI workflows | Groq; default `openai/gpt-oss-120b` |
-| Speech transcription | Groq; default `whisper-large-v3-turbo` |
-| Speech output | Browser `speechSynthesis` |
+| Task                                     | Integration                            |
+| ---------------------------------------- | -------------------------------------- |
+| Conversation and structured AI workflows | Groq; default `openai/gpt-oss-120b`    |
+| Speech transcription                     | Groq; default `whisper-large-v3-turbo` |
+| Speech output                            | Browser `speechSynthesis`              |
 
 Conversation replies stream to the interface. Structured reviews use validated response schemas. Model defaults are configurable; simulated interviewers and participants are roles within requests, not independently trained models.
 
@@ -65,15 +65,15 @@ flowchart TD
     U --> S[Browser speech synthesis]
 ```
 
-| Layer | Technology and responsibility |
-| --- | --- |
-| Frontend | React 19, TypeScript, Vite, TanStack Router and Tailwind CSS |
-| Backend | Fastify, TypeScript, Better Auth and AI SDK |
-| Data | PostgreSQL with Neon as the deployment target; backend-managed access and record ownership |
-| Delivery | Netlify frontend, Render backend, backend Docker configuration and GitHub Actions CI |
-| Source organization | Separate frontend/backend workspaces and shared TypeScript contracts |
+| Layer               | Technology and responsibility                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| Frontend            | React 19, TypeScript, Vite, TanStack Router and Tailwind CSS                               |
+| Backend             | Fastify, TypeScript, Better Auth and AI SDK                                                |
+| Data                | PostgreSQL with Neon as the deployment target; backend-managed access and record ownership |
+| Delivery            | Netlify frontend, Render backend, backend Docker configuration and GitHub Actions CI       |
+| Source organization | Separate frontend/backend workspaces and shared TypeScript contracts                       |
 
-Authentication and account history use a same-origin API proxy; streaming uses a direct backend path. Better Auth manages accounts; PostgreSQL stores account and practice data. Existing Supabase deployments remain the source until a verified transfer and connection switch to Neon. Server-side credentials stay outside the browser bundle.
+Authentication and account history use a same-origin API proxy; streaming uses a direct backend path. Better Auth manages accounts; Neon PostgreSQL stores account and practice data. A deployment still using another provider must complete a verified transfer before switching its database URL. Server-side credentials stay outside the browser bundle.
 
 ## Engineering controls
 
@@ -83,10 +83,11 @@ These are specific implemented controls, not a claim of enterprise certification
 
 ## Testing & release evidence
 
-| Recorded release | Verification |
-| --- | --- |
-| v3.0.1 | 47 unit/integration tests + 21 Playwright browser tests |
-| v3.0.2 | 58 backend/integration tests + 21 browser tests + four release-tool tests |
+| Recorded release | Verification                                                              |
+| ---------------- | ------------------------------------------------------------------------- |
+| v3.0.1           | 47 unit/integration tests + 21 Playwright browser tests                   |
+| v3.0.2           | 58 backend/integration tests + 21 browser tests + four release-tool tests |
+| v3.0.3           | 90 backend/integration tests + 35 browser tests + four release-tool tests |
 
 The [project history](../PROJECT_HISTORY.md) records the v3.0.1 results. The [v3.0.2 release notes](releases/3.0.2.md) describe type/build checks, persistence/import verification and release validation. These are historical release results, not a fresh test run or coverage percentage for this documentation repository.
 
@@ -108,9 +109,9 @@ Public files:
 - [FEATURES](../FEATURES.md): mode and workflow detail.
 - [PROJECT_HISTORY](../PROJECT_HISTORY.md): selected development milestones.
 - [AI guide](ai/README.md): task-to-model responsibilities.
-- [Release notes](releases/3.0.2.md): versioned changes and verification.
+- [Release notes](releases/3.0.3.md): versioned changes and verification.
 - [Privacy/accessibility guide](PRIVACY_AND_ACCESSIBILITY.md): user controls and boundaries.
 
 ## Current limits & roadmap
 
-Google sign-in and password-recovery email still require live provider configuration. Human multiplayer, vocal-delivery grading and paid subscriptions are outside the documented release. No delivery dates or additional roadmap commitments are announced here; [release notes](../CHANGELOG.md) are the record of shipped work.
+Google sign-in and password-recovery email still require live provider configuration. Human multiplayer, vocal-delivery grading and paid subscriptions are outside the documented release. Payment functionality is planned as v4.0.0 without an announced delivery date; [release notes](../CHANGELOG.md) remain the record of shipped work.

@@ -2,14 +2,14 @@
 
 # From one debate to a practice platform.
 
-**Release: v3.0.2**
+**Release: v3.0.3**
 
 ![The selected milestones from the MindForge prototype through the expanded platform, v2.0.1, deployment split, v3.0.1 and v3.0.2.](docs/assets/release-map.svg)
 
-From the first MindForge prototype to **Argulab v3.0.2**. This is a curated account of changes that materially altered the app, reconstructed from commit messages, file changes and implementation records through **26 September 2026**. Routine generated changes, merges and small fixes are omitted.
+From the first MindForge prototype to **Argulab v3.0.3**. This is a curated account of changes that materially altered the app, reconstructed from commit messages, file changes and implementation records through **22 November 2026**. Routine generated changes, merges and small fixes are omitted. The graphic above illustrates the earlier milestones through v3.0.2; the table includes the current release.
 
 > [!NOTE]
-> The project records v1.0.0, v2.0.0, v2.0.1, v3.0.1 and v3.0.2. The first two stages are reconstructed from significant commits; their annotated tags were added retrospectively on 26 September 2026. v2.0.1 already had an explicitly named source commit; v3.0.1 already had its release tag. Original commits and dates are preserved. See [version maintenance](VERSIONING.md) for the selected snapshots. Commit IDs refer to private source history, which is not copied to the public repository.
+> The project records v1.0.0, v2.0.0, v2.0.1, v3.0.1, v3.0.2 and v3.0.3. The first two stages are reconstructed from significant commits; their annotated tags were added retrospectively on 26 September 2026. v2.0.1 already had an explicitly named source commit; v3.0.1 already had its release tag. Original commits and dates are preserved. See [version maintenance](VERSIONING.md) for the selected snapshots. Commit IDs refer to private source history, which is not copied to the public repository.
 
 <details>
 <summary><strong>Open the date and milestone index</strong></summary>
@@ -24,6 +24,7 @@ From the first MindForge prototype to **Argulab v3.0.2**. This is a curated acco
 | v3.0.1 — privacy and accessibility           | 19 September 2026 | Policies, adult/terms acknowledgements, account export/deletion and accessibility improvements.              |
 | Logo refresh                                 | 19 September 2026 | New brain-and-speech-bubble logo supplied for the current app.                                               |
 | v3.0.2 — API routing and release maintenance | 26 September 2026 | Explicit API groups, shared paths, error/quota fixes, version checks and task-by-task AI documentation.      |
+| v3.0.3 — resource efficiency                 | 22 November 2026  | Neon migration, fewer autosaves and SQL reads, cursor history, bounded AI recovery and leaner CI.            |
 
 </details>
 
@@ -107,13 +108,21 @@ Selected evidence: `48c68ef` — **Argulab v3.0.1**, 19 September; annotated sou
 
 The following **logo change** commit (`1bfc8fe`, 19 September) supplied the new brain-and-speech-bubble artwork and updated the site's favicon asset. The public documentation uses that supplied image. The app version remained 3.0.1 at that point; the branding commit did not create another version tag.
 
-## 8. Current release — ArguLab v3.0.2
+## 8. API routing — ArguLab v3.0.2
 
 Source commit `46c4df3` reorganized the API into explicit route groups, with one URL contract shared by frontend and backend. Account, practice, community, privacy, AI and speech handlers keep separate responsibilities. Unknown AI endpoints no longer spend AI quota, malformed review JSON returns 400 and unsupported methods return 405.
 
 The routing upgrade passed 58 backend/integration tests and 21 browser tests, including authentication, persistence, privacy, request limits and streaming cleanup. The release records 3.0.2 consistently in package manifests, the runtime health endpoint, documentation and tags. It adds an AI task guide and repeatable version preparation/check commands, while preserving the existing hosting and model configuration.
 
 [Read the v3.0.2 release notes](docs/releases/3.0.2.md) · [AI task guide](docs/ai/README.md) · [Changelog](CHANGELOG.md)
+
+## 9. Current release — ArguLab v3.0.3
+
+Production PostgreSQL moved to Neon with verified account/history transfer. Source commits `dc2af9c` and `5462f76` record the migration tooling and the first resource pass. Ordinary cloud autosaves became 30-second checkpoints while local drafts, completion, ownership checks and offline recovery remained intact. SQL reads were combined and targeted indexes reduced expiry/community query work.
+
+The v3.0.3 release adds compatible cursor pagination, reuse of unchanged validated local history, bounded recovery for generated-JSON failures, and a stable evaluation rubric prefix. CI cancels obsolete work, caches registry packages and keeps failure artifacts for a bounded time. Ten relevant ECC guides inform implementation and verification; model defaults, nine practice modes and account boundaries remain intact.
+
+[Read the v3.0.3 release notes](docs/releases/3.0.3.md). Payment functionality is reserved for the future **v4.0.0** milestone and is not activated by this release.
 
 ## What remains separate from completed features
 
